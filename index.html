@@ -2598,7 +2598,62 @@
     @media (max-width: 768px) {
       section { padding: 64px 24px; }
       .hero-content { padding: 110px 24px 80px; }
-      .hero-visual { display: none; }
+      /* Mobile hero — stacks vertically, orbit below text */
+      .hero {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: auto;
+        padding-bottom: 0;
+      }
+      .hero-visual {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 340px;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        flex-shrink: 0;
+        background: linear-gradient(to bottom, var(--charcoal) 0%, rgba(30,30,26,0.6) 40%, var(--charcoal) 100%);
+        animation: fadeInUp 0.8s 1s ease forwards;
+        opacity: 0;
+      }
+      .hero-visual::before { display: none; }
+      .hero-visual::after { display: none; }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 100px 24px 32px !important;
+        max-width: 100%;
+      }
+      /* Scale down orbit for mobile */
+      .orbit-track-outer { width: 280px; height: 280px; margin-left: -140px; margin-top: -140px; }
+      .orbit-track-inner { width: 170px; height: 170px; margin-left: -85px; margin-top: -85px; }
+      .orbit-outer { width: 280px; height: 280px; margin-left: -140px; margin-top: -140px; }
+      .orbit-inner { width: 170px; height: 170px; margin-left: -85px; margin-top: -85px; }
+      .orbit-outer .orbit-item { margin-left: -28px; margin-top: -28px; }
+      .orbit-outer .orbit-img  { width: 56px; height: 56px; border-width: 2px; }
+      .orbit-inner .orbit-item { margin-left: -22px; margin-top: -22px; }
+      .orbit-inner .orbit-img  { width: 44px; height: 44px; border-width: 2px; }
+      /* Recalculate outer positions (r=140) at 60° intervals */
+      .o-outer-1 { top: calc(50% - 140px); left: 50%; }
+      .o-outer-2 { top: calc(50% - 70px);  left: calc(50% + 121px); }
+      .o-outer-3 { top: calc(50% + 70px);  left: calc(50% + 121px); }
+      .o-outer-4 { top: calc(50% + 140px); left: 50%; }
+      .o-outer-5 { top: calc(50% + 70px);  left: calc(50% - 121px); }
+      .o-outer-6 { top: calc(50% - 70px);  left: calc(50% - 121px); }
+      /* Recalculate inner positions (r=85) at 90° intervals */
+      .o-inner-1 { top: calc(50% - 85px); left: 50%; }
+      .o-inner-2 { top: 50%; left: calc(50% + 85px); }
+      .o-inner-3 { top: calc(50% + 85px); left: 50%; }
+      .o-inner-4 { top: 50%; left: calc(50% - 85px); }
+      /* Scale emblem */
+      .hero-emblem { width: 90px; height: 90px; }
+      .hero-emblem-letter { font-size: 2.2rem; }
+      .hero-emblem-sub { font-size: 7px; }
+      /* Hide tooltips on touch */
+      .orbit-tooltip { display: none; }
+      .hero-scroll { display: none; }
       .hero-title { font-size: 2.4rem; }
       #navbar { padding: 0 24px; }
       .nav-links { display: none; }
