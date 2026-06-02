@@ -439,9 +439,12 @@
       right: 0;
       top: 0;
       bottom: 0;
-      width: 48%;
+      width: 52%;
       overflow: hidden;
       z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-visual::before {
@@ -450,66 +453,207 @@
       left: 0;
       top: 0;
       bottom: 0;
-      width: 200px;
+      width: 280px;
       background: linear-gradient(to right, var(--charcoal), transparent);
       z-index: 2;
     }
 
-    .hero-img-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(3, 1fr);
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(200,169,110,0.04) 0%, transparent 70%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-deco {
+      width: 100%;
       height: 100%;
-      gap: 3px;
-      animation: heroParallax 20s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroParallax {
-      0% { transform: translateY(0) scale(1.05); }
-      100% { transform: translateY(-30px) scale(1.08); }
-    }
-
-    .hero-img-cell {
-      overflow: hidden;
       position: relative;
-    }
-
-    .hero-img-cell img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.75;
-      filter: saturate(0.9) brightness(0.8);
-      transition: all var(--transition);
-    }
-
-    /* Food photo placeholders using CSS art */
-    .food-placeholder {
-      width: 100%;
-      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .fp-1 { background: linear-gradient(135deg, #3d2e1e 0%, #5a3e28 50%, #2c1e0f 100%); }
-    .fp-2 { background: linear-gradient(135deg, #1e2d1a 0%, #2e4020 50%, #1a2614 100%); }
-    .fp-3 { background: linear-gradient(135deg, #2d2520 0%, #4a3830 50%, #1e1814 100%); }
-    .fp-4 { background: linear-gradient(135deg, #201e28 0%, #352e40 50%, #181620 100%); }
-    .fp-5 { background: linear-gradient(135deg, #2a1e14 0%, #40300a 50%, #1e1610 100%); }
-    .fp-6 { background: linear-gradient(135deg, #1a2820 0%, #28402e 50%, #141e18 100%); }
+    /* Rotating ring */
+    .hero-deco-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 169, 110, 0.12);
+    }
+    .hero-deco-ring-1 {
+      width: 520px; height: 520px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ringRotate 40s linear infinite;
+    }
+    .hero-deco-ring-2 {
+      width: 380px; height: 380px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-color: rgba(200, 169, 110, 0.08);
+      animation: ringRotate 28s linear infinite reverse;
+    }
+    .hero-deco-ring-3 {
+      width: 240px; height: 240px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-color: rgba(200, 169, 110, 0.15);
+      animation: ringRotate 18s linear infinite;
+    }
 
-    .food-placeholder::after {
-      content: attr(data-label);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(200, 169, 110, 0.5);
-      letter-spacing: 0.1em;
+    @keyframes ringRotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Dot markers on ring */
+    .hero-deco-ring-1::before,
+    .hero-deco-ring-1::after,
+    .hero-deco-ring-3::before {
+      content: '';
+      position: absolute;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+    .hero-deco-ring-1::before { top: -2.5px; left: 50%; transform: translateX(-50%); }
+    .hero-deco-ring-1::after  { bottom: -2.5px; left: 50%; transform: translateX(-50%); }
+    .hero-deco-ring-3::before { top: -2.5px; left: 50%; transform: translateX(-50%); }
+
+    /* Central emblem */
+    .hero-emblem {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, rgba(200,169,110,0.12) 0%, rgba(200,169,110,0.04) 60%, transparent 100%);
+      border: 1px solid rgba(200,169,110,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 0 60px rgba(200,169,110,0.08), inset 0 0 40px rgba(200,169,110,0.05);
+    }
+
+    .hero-emblem-inner {
       text-align: center;
-      padding: 8px;
+    }
+
+    .hero-emblem-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 20px rgba(200,169,110,0.3));
+    }
+
+    .hero-emblem-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(200,169,110,0.5);
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Floating info cards */
+    .hero-float-card {
+      position: absolute;
+      background: rgba(30,30,26,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(200,169,110,0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      z-index: 4;
+      min-width: 160px;
+    }
+
+    .hfc-1 {
+      top: 18%;
+      right: 8%;
+      animation: floatCard1 6s ease-in-out infinite;
+    }
+    .hfc-2 {
+      bottom: 22%;
+      right: 14%;
+      animation: floatCard2 7s ease-in-out infinite;
+    }
+    .hfc-3 {
+      top: 52%;
+      right: 4%;
+      animation: floatCard1 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(10px); }
+    }
+
+    .hfc-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .hfc-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .hfc-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 3px;
+    }
+
+    /* Decorative lines */
+    .hero-deco-line {
+      position: absolute;
+      background: linear-gradient(to bottom, transparent, rgba(200,169,110,0.2), transparent);
+      width: 1px;
+    }
+    .hdl-1 { height: 200px; top: 5%; left: 20%; animation: linePulse 4s ease-in-out infinite; }
+    .hdl-2 { height: 140px; bottom: 8%; right: 30%; animation: linePulse 5s ease-in-out infinite 1s; }
+
+    @keyframes linePulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.9; }
+    }
+
+    /* Scattered gold dots */
+    .hero-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .hd-1 { width: 3px; height: 3px; top: 15%; left: 30%; opacity: 0.4; animation: dotBlink 3s ease-in-out infinite; }
+    .hd-2 { width: 2px; height: 2px; top: 70%; left: 15%; opacity: 0.3; animation: dotBlink 4s ease-in-out infinite 1s; }
+    .hd-3 { width: 4px; height: 4px; top: 35%; right: 25%; opacity: 0.25; animation: dotBlink 5s ease-in-out infinite 0.5s; }
+    .hd-4 { width: 2px; height: 2px; bottom: 15%; left: 40%; opacity: 0.35; animation: dotBlink 3.5s ease-in-out infinite 2s; }
+
+    @keyframes dotBlink {
+      0%, 100% { opacity: 0.15; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.5); }
     }
 
     .hero-content {
@@ -2515,13 +2659,46 @@
     <section class="hero" style="padding:0">
       <div class="hero-bg"></div>
       <div class="hero-visual">
-        <div class="hero-img-grid">
-          <div class="hero-img-cell"><div class="food-placeholder fp-1" data-label="Beef Tagliata"></div></div>
-          <div class="hero-img-cell"><div class="food-placeholder fp-2" data-label="Interijer"></div></div>
-          <div class="hero-img-cell"><div class="food-placeholder fp-3" data-label="Rižoto s kozicama"></div></div>
-          <div class="hero-img-cell"><div class="food-placeholder fp-4" data-label="Vinska karta"></div></div>
-          <div class="hero-img-cell"><div class="food-placeholder fp-5" data-label="Lava Cake"></div></div>
-          <div class="hero-img-cell"><div class="food-placeholder fp-6" data-label="Terasa"></div></div>
+        <div class="hero-deco">
+          <!-- Rings -->
+          <div class="hero-deco-ring hero-deco-ring-1"></div>
+          <div class="hero-deco-ring hero-deco-ring-2"></div>
+          <div class="hero-deco-ring hero-deco-ring-3"></div>
+
+          <!-- Vertical deco lines -->
+          <div class="hero-deco-line hdl-1"></div>
+          <div class="hero-deco-line hdl-2"></div>
+
+          <!-- Gold dots -->
+          <div class="hero-dot hd-1"></div>
+          <div class="hero-dot hd-2"></div>
+          <div class="hero-dot hd-3"></div>
+          <div class="hero-dot hd-4"></div>
+
+          <!-- Central emblem -->
+          <div class="hero-emblem">
+            <div class="hero-emblem-inner">
+              <span class="hero-emblem-letter">A</span>
+              <span class="hero-emblem-sub">Aurora</span>
+            </div>
+          </div>
+
+          <!-- Floating info cards -->
+          <div class="hero-float-card hfc-1">
+            <div class="hfc-label">Otvoreno danas</div>
+            <div class="hfc-value">10:00 – 23:00</div>
+            <div class="hfc-sub">Pon – Četvrtak</div>
+          </div>
+          <div class="hero-float-card hfc-2">
+            <div class="hfc-label">Chef's Signature</div>
+            <div class="hfc-value">Beef Tagliata</div>
+            <div class="hfc-sub">Preporučeno večeras</div>
+          </div>
+          <div class="hero-float-card hfc-3">
+            <div class="hfc-label">Ocjena gostiju</div>
+            <div class="hfc-value">★ 4.9 / 5</div>
+            <div class="hfc-sub">200+ recenzija</div>
+          </div>
         </div>
       </div>
       <div class="hero-content">
