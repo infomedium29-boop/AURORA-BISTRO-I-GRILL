@@ -114,12 +114,72 @@
     /* =============================================
        PAGE SYSTEM
     ============================================= */
-    .page { display: none; animation: pageFadeIn 0.6s ease forwards; }
+    .page { display: none; }
     .page.active { display: block; }
 
-    @keyframes pageFadeIn {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* =============================================
+       PAGE TRANSITION CURTAIN
+    ============================================= */
+    #page-curtain {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 100vh;
+      background: var(--charcoal);
+      z-index: 9998;
+      transform: translateY(-100%);
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    /* Golden line at bottom of curtain */
+    #page-curtain::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--gold) 20%,
+        var(--gold-light) 50%,
+        var(--gold) 80%,
+        transparent 100%
+      );
+      box-shadow: 0 0 20px rgba(200, 169, 110, 0.6), 0 0 60px rgba(200, 169, 110, 0.2);
+    }
+
+    /* Logo in center of curtain */
+    #page-curtain::before {
+      content: 'Aurora';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: rgba(200, 169, 110, 0.35);
+      letter-spacing: 0.2em;
+      pointer-events: none;
+    }
+
+    /* Curtain drop — slides down into view */
+    #page-curtain.drop {
+      animation: curtainDrop 0.42s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    }
+
+    /* Curtain lift — slides up out of view */
+    #page-curtain.lift {
+      animation: curtainLift 0.42s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    }
+
+    @keyframes curtainDrop {
+      from { transform: translateY(-100%); }
+      to   { transform: translateY(0%); }
+    }
+
+    @keyframes curtainLift {
+      from { transform: translateY(0%); }
+      to   { transform: translateY(100%); }
     }
 
     /* =============================================
@@ -2695,6 +2755,9 @@
 </head>
 <body>
 
+  <!-- PAGE TRANSITION CURTAIN -->
+  <div id="page-curtain"></div>
+
   <!-- NAVIGATION -->
   <nav id="navbar" class="light">
     <div class="nav-logo" onclick="navigate('home')">
@@ -4229,17 +4292,54 @@
   <!-- ===================== SCRIPTS ===================== -->
   <script>
     // NAVIGATION
+    // CURTAIN TRANSITION
+    let isTransitioning = false;
+
     function navigate(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + page).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Prevent spamming
+      if (isTransitioning) return;
 
-      document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
-        a.classList.toggle('active', a.dataset.page === page);
-      });
+      // Don't transition if already on this page
+      const current = document.querySelector('.page.active');
+      if (current && current.id === 'page-' + page) return;
 
-      // Trigger reveals on new page
-      setTimeout(triggerReveals, 100);
+      isTransitioning = true;
+      const curtain = document.getElementById('page-curtain');
+
+      // PHASE 1: Drop curtain down (covers screen)
+      curtain.classList.remove('lift');
+      curtain.classList.add('drop');
+      curtain.style.pointerEvents = 'all';
+
+      setTimeout(() => {
+        // PHASE 2: Swap page while curtain is fully covering screen
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-' + page).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Update nav active state
+        document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+          a.classList.toggle('active', a.dataset.page === page);
+        });
+
+        // Small pause at full coverage so logo is visible
+        setTimeout(() => {
+          // PHASE 3: Lift curtain up (reveals new page)
+          curtain.classList.remove('drop');
+          curtain.classList.add('lift');
+
+          setTimeout(() => {
+            // PHASE 4: Cleanup
+            curtain.classList.remove('lift');
+            curtain.style.pointerEvents = 'none';
+            isTransitioning = false;
+
+            // Trigger scroll reveals on new page
+            triggerReveals();
+          }, 440);
+        }, 80);
+
+      }, 420);
     }
 
     // HAMBURGER
