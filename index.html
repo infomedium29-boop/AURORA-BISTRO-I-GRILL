@@ -1,0 +1,4025 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Bistro &amp; Grill | Premium restoran u Osijeku</title>
+  <meta name="description" content="Otkrijte moderan i premium restoran u Osijeku s pažljivo osmišljenim jelovnikom, elegantnim ambijentom i mogućnošću online rezervacije stola." />
+  <meta name="keywords" content="restoran Osijek, premium restoran, moderan restoran, bistro i grill, rezervacija restorana, restoran za večeru, elegantan restoran" />
+  <meta property="og:title" content="Aurora Bistro & Grill | Premium restoran u Osijeku" />
+  <meta property="og:description" content="Vrhunska gastronomija, moderan ambijent i pažljivo odabrani sastojci u jedinstvenom restoranskom iskustvu." />
+  <meta property="og:type" content="restaurant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       ROOT VARIABLES & RESET
+    ============================================= */
+    :root {
+      --olive-dark: #2c3524;
+      --olive-mid: #3d4a2e;
+      --olive-light: #5a6b42;
+      --olive-muted: #8a9a72;
+      --cream: #f5f0e8;
+      --cream-dark: #ede5d4;
+      --beige: #d9cfba;
+      --white: #fafaf8;
+      --charcoal: #1e1e1a;
+      --charcoal-mid: #2d2d28;
+      --charcoal-light: #4a4a44;
+      --gold: #c8a96e;
+      --gold-light: #e0c48a;
+      --gold-muted: #a08855;
+      --copper: #b87333;
+      --text-dark: #1a1a16;
+      --text-mid: #3d3d38;
+      --text-light: #7a7a72;
+      --text-lighter: #a8a89f;
+      --border: rgba(200, 169, 110, 0.2);
+      --border-light: rgba(200, 169, 110, 0.12);
+      --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.14);
+      --shadow-xl: 0 40px 100px rgba(0,0,0,0.18);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+
+    .display-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    .section-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--charcoal);
+    }
+
+    .section-title.light { color: var(--white); }
+    .section-title.cream { color: var(--cream); }
+
+    p { line-height: 1.75; color: var(--text-mid); }
+    a { text-decoration: none; color: inherit; }
+
+    /* =============================================
+       SCROLLBAR
+    ============================================= */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--charcoal); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* =============================================
+       PAGE SYSTEM
+    ============================================= */
+    .page { display: none; animation: pageFadeIn 0.6s ease forwards; }
+    .page.active { display: block; }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 40px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all var(--transition);
+    }
+
+    #navbar.scrolled {
+      background: rgba(30, 30, 26, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      height: 64px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    #navbar.light {
+      background: transparent;
+    }
+
+    #navbar.light.scrolled {
+      background: rgba(30, 30, 26, 0.97);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      line-height: 1;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-size: 9px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--charcoal) !important;
+      padding: 10px 22px !important;
+      border-radius: var(--radius-sm) !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.14em !important;
+      transition: background var(--transition-fast), transform var(--transition-fast) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      width: 24px; height: 1.5px;
+      background: var(--white);
+      transition: all var(--transition-fast);
+      display: block;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4.5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4.5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(30, 30, 26, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 24px 40px 32px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color var(--transition-fast);
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.1);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .btn:hover::after { opacity: 1; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--charcoal);
+      box-shadow: 0 4px 20px rgba(200, 169, 110, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      box-shadow: 0 8px 32px rgba(200, 169, 110, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .btn-dark {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--charcoal-mid);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* =============================================
+       REVEAL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(200, 169, 110, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(90, 107, 66, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #1a1a14 0%, #252520 40%, #1e1e1a 100%);
+      z-index: 0;
+    }
+
+    /* Decorative food photo placeholders */
+    .hero-visual {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 48%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 200px;
+      background: linear-gradient(to right, var(--charcoal), transparent);
+      z-index: 2;
+    }
+
+    .hero-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      height: 100%;
+      gap: 3px;
+      animation: heroParallax 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroParallax {
+      0% { transform: translateY(0) scale(1.05); }
+      100% { transform: translateY(-30px) scale(1.08); }
+    }
+
+    .hero-img-cell {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-img-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      filter: saturate(0.9) brightness(0.8);
+      transition: all var(--transition);
+    }
+
+    /* Food photo placeholders using CSS art */
+    .food-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fp-1 { background: linear-gradient(135deg, #3d2e1e 0%, #5a3e28 50%, #2c1e0f 100%); }
+    .fp-2 { background: linear-gradient(135deg, #1e2d1a 0%, #2e4020 50%, #1a2614 100%); }
+    .fp-3 { background: linear-gradient(135deg, #2d2520 0%, #4a3830 50%, #1e1814 100%); }
+    .fp-4 { background: linear-gradient(135deg, #201e28 0%, #352e40 50%, #181620 100%); }
+    .fp-5 { background: linear-gradient(135deg, #2a1e14 0%, #40300a 50%, #1e1610 100%); }
+    .fp-6 { background: linear-gradient(135deg, #1a2820 0%, #28402e 50%, #141e18 100%); }
+
+    .food-placeholder::after {
+      content: attr(data-label);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(200, 169, 110, 0.5);
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 120px 80px 100px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeInUp 0.8s 0.3s ease forwards;
+    }
+
+    .hero-eyebrow-line {
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-eyebrow-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeInUp 0.8s 0.5s ease forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 44px;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeInUp 0.8s 0.7s ease forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 0.8s 0.9s ease forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeInUp 0.8s 1.2s ease forwards;
+    }
+
+    .hero-scroll-text {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =============================================
+       PERKS STRIP
+    ============================================= */
+    .perks-strip {
+      background: var(--charcoal-mid);
+      border-top: 1px solid rgba(200, 169, 110, 0.15);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+      padding: 28px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .perk-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .perk-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(200, 169, 110, 0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .perk-text {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+    }
+
+    /* =============================================
+       SECTIONS SHARED
+    ============================================= */
+    section {
+      padding: 100px 80px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-header .section-eyebrow {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .section-header.center {
+      text-align: center;
+    }
+
+    .section-header.center .section-eyebrow::before,
+    .section-header.center .section-eyebrow::after {
+      content: '—';
+      margin: 0 10px;
+      opacity: 0.5;
+    }
+
+    .section-divider {
+      width: 60px; height: 1px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+
+    .section-divider.center {
+      margin: 24px auto;
+    }
+
+    /* =============================================
+       OUR STORY (HOMEPAGE)
+    ============================================= */
+    .story-section {
+      background: var(--cream);
+    }
+
+    .story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .story-visual {
+      position: relative;
+    }
+
+    .story-img-main {
+      width: 100%;
+      height: 480px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, #2c2520 0%, #4a3820 50%, #1e1a14 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .story-img-main::after {
+      content: 'Aurora Bistro & Grill';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: rgba(200, 169, 110, 0.6);
+    }
+
+    .story-img-accent {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 180px;
+      height: 180px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e2d1a 0%, #3d5228 100%);
+      border: 4px solid var(--cream);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-img-accent::after {
+      content: '✦';
+      font-size: 32px;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    .story-stat-badge {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      background: var(--charcoal);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .story-text .section-eyebrow { display: block; margin-bottom: 14px; }
+
+    .story-text .section-title {
+      margin-bottom: 24px;
+    }
+
+    .story-text p {
+      font-size: 15.5px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+
+    .philosophy-card {
+      margin-top: 36px;
+      padding: 24px 28px;
+      border-left: 3px solid var(--gold);
+      background: rgba(200, 169, 110, 0.06);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .philosophy-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* =============================================
+       FEATURED DISHES
+    ============================================= */
+    .featured-section {
+      background: var(--charcoal);
+      padding: 100px 80px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+    }
+
+    .dish-card {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--charcoal-mid);
+    }
+
+    .dish-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+
+    .dish-card:hover .dish-card-bg {
+      transform: scale(1.06);
+    }
+
+    .dc-1 .dish-card-bg { background: linear-gradient(135deg, #3d2a18, #5a3f25, #2a1e10); }
+    .dc-2 .dish-card-bg { background: linear-gradient(135deg, #1e2d20, #2e4a25, #141e14); }
+    .dc-3 .dish-card-bg { background: linear-gradient(135deg, #252038, #3c3050, #181520); }
+    .dc-4 .dish-card-bg { background: linear-gradient(135deg, #28201a, #403218, #1e1810); }
+    .dc-5 .dish-card-bg { background: linear-gradient(135deg, #1e2818, #2e4022, #141e10); }
+    .dc-6 .dish-card-bg { background: linear-gradient(135deg, #302018, #503428, #201410); }
+
+    .dish-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      z-index: 1;
+    }
+
+    .dish-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px;
+      z-index: 2;
+    }
+
+    .dish-emoji {
+      font-size: 36px;
+      display: block;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+
+    .dish-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .dish-desc {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .dish-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .dish-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 2px;
+      z-index: 2;
+    }
+
+    /* =============================================
+       EXPERIENCE SECTION
+    ============================================= */
+    .experience-section {
+      background: var(--olive-dark);
+      padding: 100px 80px;
+    }
+
+    .experience-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .experience-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .exp-feature {
+      padding: 24px;
+      border: 1px solid rgba(200, 169, 110, 0.2);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+
+    .exp-feature:hover {
+      border-color: var(--gold);
+      background: rgba(200, 169, 110, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .exp-feature-icon {
+      font-size: 22px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .exp-feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .exp-feature-text {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .experience-visual {
+      position: relative;
+    }
+
+    .exp-main-img {
+      width: 100%;
+      height: 520px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a2810 0%, #2c401a 50%, #1e3014 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .exp-main-img::after {
+      content: '🍷';
+      font-size: 64px;
+      filter: drop-shadow(0 0 30px rgba(200, 169, 110, 0.4));
+    }
+
+    .exp-float-card {
+      position: absolute;
+      top: 30px;
+      left: -30px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 200px;
+    }
+
+    .exp-float-icon {
+      width: 44px; height: 44px;
+      background: var(--charcoal);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .exp-float-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .exp-float-sub {
+      font-size: 11.5px;
+      color: var(--text-light);
+    }
+
+    /* =============================================
+       TESTIMONIALS
+    ============================================= */
+    .testimonials-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding-top: 20px;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+
+    .author-info {
+      font-size: 12px;
+      color: var(--text-lighter);
+      margin-top: 2px;
+    }
+
+    /* =============================================
+       CTA SECTION
+    ============================================= */
+    .cta-section {
+      background: var(--charcoal);
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200, 169, 110, 0.08) 0%, transparent 70%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-section .section-title {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* =============================================
+       ABOUT PAGE
+    ============================================= */
+    .about-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(200, 169, 110, 0.06), transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(90, 107, 66, 0.08), transparent 50%);
+    }
+
+    .about-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .page-hero-title em { font-style: italic; color: var(--gold-light); }
+
+    .page-hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    .about-philosophy {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .philosophy-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .phil-text p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+
+    .phil-quote {
+      background: var(--charcoal);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phil-quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      color: rgba(200, 169, 110, 0.15);
+      line-height: 1;
+    }
+
+    .phil-quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 24px;
+    }
+
+    .phil-quote-line {
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+
+    .why-us-section {
+      background: var(--white);
+      padding: 100px 80px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      padding: 36px 32px;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+    }
+
+    .why-card:hover::after { transform: scaleX(1); }
+
+    .why-card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(200, 169, 110, 0.15);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .why-card-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .why-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .why-card-text {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .team-section {
+      background: var(--charcoal);
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .team-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .team-intro {
+      max-width: 620px;
+      margin: 0 auto 60px;
+      color: rgba(255,255,255,0.6);
+      font-size: 15.5px;
+      line-height: 1.8;
+    }
+
+    .team-visual {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200, 169, 110, 0.15);
+      border-radius: var(--radius-xl);
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .team-role {
+      text-align: center;
+    }
+
+    .team-role-icon {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(200, 169, 110, 0.1);
+      border: 1px solid rgba(200, 169, 110, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+
+    .team-role-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .team-role-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       MENU PAGE
+    ============================================= */
+    .menu-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(200, 169, 110, 0.06), transparent 60%);
+    }
+
+    .menu-hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menu-tabs {
+      background: var(--cream);
+      padding: 32px 80px;
+      position: sticky;
+      top: 64px;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .menu-tabs-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-light);
+      transition: all var(--transition-fast);
+    }
+
+    .menu-tab:hover { color: var(--charcoal); background: rgba(0,0,0,0.05); }
+
+    .menu-tab.active {
+      background: var(--charcoal);
+      color: var(--gold);
+    }
+
+    .menu-content {
+      background: var(--white);
+      padding: 80px;
+    }
+
+    .menu-content-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .menu-category {
+      display: none;
+    }
+
+    .menu-category.active { display: block; }
+
+    .menu-cat-header {
+      margin-bottom: 48px;
+    }
+
+    .menu-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .menu-cat-sub {
+      font-size: 14px;
+      color: var(--text-lighter);
+    }
+
+    .menu-items-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .menu-item {
+      padding: 28px 30px;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-item:hover {
+      background: var(--cream);
+      transform: translateX(4px);
+    }
+
+    .menu-item-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .item-tag {
+      font-size: 9px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+
+    .tag-chef { background: rgba(200, 169, 110, 0.15); color: var(--gold-muted); border: 1px solid rgba(200, 169, 110, 0.3); }
+    .tag-veg { background: rgba(90, 107, 66, 0.12); color: var(--olive-light); border: 1px solid rgba(90, 107, 66, 0.25); }
+    .tag-spicy { background: rgba(180, 60, 30, 0.1); color: #c44020; border: 1px solid rgba(180, 60, 30, 0.2); }
+
+    .menu-item-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-item-desc {
+      font-size: 13px;
+      color: var(--text-lighter);
+      line-height: 1.6;
+    }
+
+    /* Drink items - single column, compact */
+    .menu-items-list .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+
+    .menu-items-list .menu-item-desc { display: none; }
+    .menu-items-list .menu-item-header { margin: 0; flex: 1; }
+
+    .drinks-group {
+      margin-bottom: 40px;
+    }
+
+    .drinks-group-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* =============================================
+       GALLERY PAGE
+    ============================================= */
+    .gallery-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 80px;
+      text-align: center;
+    }
+
+    .gallery-section {
+      background: var(--white);
+      padding: 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 240px;
+      gap: 6px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+
+    .gallery-item-bg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover .gallery-item-bg {
+      transform: scale(1.08);
+    }
+
+    .gi-1 .gallery-item-bg { background: linear-gradient(135deg, #2d2018, #4a3222, #1e1810); }
+    .gi-2 .gallery-item-bg { background: linear-gradient(135deg, #1e2d18, #304a22, #141e10); }
+    .gi-3 .gallery-item-bg { background: linear-gradient(135deg, #281e28, #403040, #1e1420); }
+    .gi-4 .gallery-item-bg { background: linear-gradient(135deg, #28201a, #403018, #1e1a10); }
+    .gi-5 .gallery-item-bg { background: linear-gradient(135deg, #1e2820, #2d4030, #141e18); }
+    .gi-6 .gallery-item-bg { background: linear-gradient(135deg, #302820, #504030, #20180e); }
+    .gi-7 .gallery-item-bg { background: linear-gradient(135deg, #201e2a, #30304a, #141220); }
+    .gi-8 .gallery-item-bg { background: linear-gradient(135deg, #2a1e18, #44302a, #1e1410); }
+    .gi-9 .gallery-item-bg { background: linear-gradient(135deg, #1e2818, #2e4022, #141c10); }
+    .gi-10 .gallery-item-bg { background: linear-gradient(135deg, #281818, #402020, #1e1010); }
+    .gi-11 .gallery-item-bg { background: linear-gradient(135deg, #202020, #343434, #141414); }
+    .gi-12 .gallery-item-bg { background: linear-gradient(135deg, #1a2020, #283030, #121818); }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-fast);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      background: rgba(0,0,0,0.35);
+    }
+
+    .gallery-overlay-icon {
+      font-size: 28px;
+      color: white;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all var(--transition-fast);
+    }
+
+    .gallery-item:hover .gallery-overlay-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all var(--transition-fast);
+    }
+
+    .gallery-item:hover .gallery-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-label-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
+
+    .gallery-emoji {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 42px;
+      opacity: 0.5;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+      pointer-events: none;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      animation: lightboxIn 0.3s ease;
+    }
+
+    .lightbox.open { display: flex; }
+
+    @keyframes lightboxIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 800px;
+      width: 90%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      z-index: 1;
+    }
+
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+    /* =============================================
+       RESERVATIONS PAGE
+    ============================================= */
+    .reservations-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reservations-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(200, 169, 110, 0.07), transparent 60%);
+    }
+
+    .reservations-section {
+      background: var(--cream);
+      padding: 80px;
+    }
+
+    .reservations-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .res-info {}
+
+    .res-info-card {
+      background: var(--charcoal);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 24px;
+    }
+
+    .res-info-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .res-info-list {
+      list-style: none;
+    }
+
+    .res-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .res-info-list li:last-child { border-bottom: none; }
+
+    .res-info-icon {
+      color: var(--gold);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .res-info-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    .res-info-text strong {
+      color: var(--white);
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .res-direct {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      border: 2px solid var(--border);
+    }
+
+    .res-direct-text {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .res-form-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .form-sub {
+      font-size: 14px;
+      color: var(--text-lighter);
+      margin-bottom: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: var(--radius-sm);
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: var(--charcoal);
+      background: var(--white);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      -webkit-appearance: none;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.12);
+    }
+
+    .form-control::placeholder { color: rgba(0,0,0,0.25); }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    select.form-control {
+      cursor: pointer;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      margin-top: 8px;
+      font-size: 13px;
+      justify-content: center;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success.show { display: block; }
+
+    .success-icon {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .success-text {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       EVENTS PAGE
+    ============================================= */
+    .events-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .events-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(200, 169, 110, 0.07), transparent 60%);
+    }
+
+    .events-types {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .event-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all var(--transition-fast);
+    }
+
+    .event-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+    }
+
+    .event-card-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ec-1 { background: linear-gradient(135deg, #2c2038, #483260, #1e1828); }
+    .ec-2 { background: linear-gradient(135deg, #382820, #603840, #281414); }
+    .ec-3 { background: linear-gradient(135deg, #203028, #304840, #181e18); }
+    .ec-4 { background: linear-gradient(135deg, #302020, #503430, #201410); }
+    .ec-5 { background: linear-gradient(135deg, #202838, #304050, #141820); }
+    .ec-6 { background: linear-gradient(135deg, #283020, #405030, #181e10); }
+
+    .event-card-body {
+      padding: 28px;
+    }
+
+    .event-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .event-card-text {
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    .events-features {
+      background: var(--charcoal);
+      padding: 100px 80px;
+    }
+
+    .features-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .features-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 60px;
+      align-items: center;
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .feature-list li:last-child { border: none; }
+
+    .feature-list-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(200, 169, 110, 0.1);
+      border: 1px solid rgba(200, 169, 110, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .feature-list-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .feature-list-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    .events-cta {
+      background: var(--olive-dark);
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .events-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* =============================================
+       CONTACT PAGE
+    ============================================= */
+    .contact-hero {
+      background: var(--charcoal);
+      padding: 160px 80px 80px;
+      position: relative;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(200, 169, 110, 0.07), transparent 60%);
+    }
+
+    .contact-section {
+      background: var(--white);
+      padding: 80px;
+    }
+
+    .contact-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+    }
+
+    .contact-info-block {
+      margin-bottom: 32px;
+    }
+
+    .contact-info-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .contact-info-value {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    .contact-info-value a {
+      color: var(--charcoal);
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+
+    .contact-info-value a:hover { color: var(--gold); }
+
+    .hours-grid {
+      display: grid;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px;
+    }
+
+    .hours-day { color: var(--text-mid); }
+    .hours-time { color: var(--charcoal); font-weight: 500; }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, #e8e0d0 0%, #d4c8b0 50%, #c8be9e 100%);
+      border-radius: var(--radius-lg);
+      margin-top: 24px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 24px, rgba(0,0,0,0.04) 24px, rgba(0,0,0,0.04) 25px
+      ),
+      repeating-linear-gradient(
+        90deg, transparent, transparent 24px, rgba(0,0,0,0.04) 24px, rgba(0,0,0,0.04) 25px
+      );
+    }
+
+    .map-pin { font-size: 36px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); position: relative; z-index: 1; }
+    .map-address { font-size: 14px; font-weight: 500; color: var(--charcoal); position: relative; z-index: 1; }
+
+    .social-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid rgba(200, 169, 110, 0.2);
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+      transform: translateY(-3px);
+    }
+
+    .contact-form-card {
+      background: var(--cream);
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--charcoal);
+      padding: 80px 80px 40px;
+      border-top: 1px solid rgba(200, 169, 110, 0.12);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .footer-logo-sub {
+      font-size: 9px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand-text {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .footer-col-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .footer-contact-icon {
+      color: var(--gold);
+      font-size: 14px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .footer-contact-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    .footer-hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .footer-hours-day { font-size: 12.5px; color: rgba(255,255,255,0.35); }
+    .footer-hours-time { font-size: 12.5px; color: rgba(255,255,255,0.55); font-weight: 400; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copyright {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.5); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1100px) {
+      section { padding: 80px 48px; }
+      .hero-content { padding: 120px 48px 80px; }
+      .perks-strip { padding: 28px 48px; gap: 40px; }
+      .story-inner, .experience-inner, .philosophy-grid, .features-cols { grid-template-columns: 1fr; gap: 48px; }
+      .experience-visual { order: -1; }
+      .story-img-accent { display: none; }
+      .featured-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .menu-content { padding: 60px 48px; }
+      .menu-tabs { padding: 24px 48px; }
+      .gallery-section { padding: 60px 48px; }
+      .reservations-section, .contact-section { padding: 60px 48px; }
+      .reservations-inner, .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .events-types { padding: 80px 48px; }
+      .events-features, .events-cta { padding: 80px 48px; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 64px 24px; }
+      .hero-content { padding: 110px 24px 80px; }
+      .hero-visual { display: none; }
+      .hero-title { font-size: 2.4rem; }
+      #navbar { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .perks-strip { padding: 24px; gap: 28px; flex-direction: column; align-items: flex-start; }
+      .story-img-main { height: 280px; }
+      .story-stat-badge { display: none; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .dish-card { height: 280px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .menu-items-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.wide { grid-column: span 1; }
+      .gallery-item.tall { grid-row: span 1; }
+      .res-form-card, .contact-form-card { padding: 32px 24px; }
+      .events-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .team-visual { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .menu-tabs { padding: 16px 24px; top: 64px; }
+      .menu-content { padding: 48px 24px; }
+      .gallery-section { padding: 48px 24px; }
+      .reservations-section, .contact-section { padding: 48px 24px; }
+      .events-types, .events-features, .events-cta { padding: 64px 24px; }
+      .about-hero, .menu-hero, .gallery-hero, .reservations-hero, .events-hero, .contact-hero { padding: 130px 24px 60px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .section-title { font-size: 1.9rem; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .footer-grid { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="light">
+    <div class="nav-logo" onclick="navigate('home')">
+      Aurora Bistro
+      <span>& Grill — Osijek</span>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="navigate('home')" data-page="home">Početna</a></li>
+      <li><a onclick="navigate('about')" data-page="about">O nama</a></li>
+      <li><a onclick="navigate('menu')" data-page="menu">Jelovnik</a></li>
+      <li><a onclick="navigate('gallery')" data-page="gallery">Galerija</a></li>
+      <li><a onclick="navigate('reservations')" data-page="reservations">Rezervacije</a></li>
+      <li><a onclick="navigate('events')" data-page="events">Događanja</a></li>
+      <li><a onclick="navigate('contact')" data-page="contact">Kontakt</a></li>
+      <li><a onclick="navigate('reservations')" class="nav-cta">Rezerviraj stol</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a onclick="navigate('home');closeMobile()">Početna</a>
+    <a onclick="navigate('about');closeMobile()">O nama</a>
+    <a onclick="navigate('menu');closeMobile()">Jelovnik</a>
+    <a onclick="navigate('gallery');closeMobile()">Galerija</a>
+    <a onclick="navigate('reservations');closeMobile()">Rezervacije</a>
+    <a onclick="navigate('events');closeMobile()">Događanja</a>
+    <a onclick="navigate('contact');closeMobile()">Kontakt</a>
+    <a onclick="navigate('reservations');closeMobile()" style="color:var(--gold)!important">Rezerviraj stol →</a>
+  </div>
+
+  <!-- ===================== HOME PAGE ===================== -->
+  <div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section class="hero" style="padding:0">
+      <div class="hero-bg"></div>
+      <div class="hero-visual">
+        <div class="hero-img-grid">
+          <div class="hero-img-cell"><div class="food-placeholder fp-1" data-label="Beef Tagliata"></div></div>
+          <div class="hero-img-cell"><div class="food-placeholder fp-2" data-label="Interijer"></div></div>
+          <div class="hero-img-cell"><div class="food-placeholder fp-3" data-label="Rižoto s kozicama"></div></div>
+          <div class="hero-img-cell"><div class="food-placeholder fp-4" data-label="Vinska karta"></div></div>
+          <div class="hero-img-cell"><div class="food-placeholder fp-5" data-label="Lava Cake"></div></div>
+          <div class="hero-img-cell"><div class="food-placeholder fp-6" data-label="Terasa"></div></div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Premium restoran — Osijek</span>
+        </div>
+        <h1 class="hero-title">
+          Okus koji se <em>pamti.</em><br>
+          Ambijent kojem<br>se <em>vraćate.</em>
+        </h1>
+        <p class="hero-subtitle">
+          Aurora Bistro & Grill spaja vrhunsku gastronomiju, moderan ambijent i pažljivo odabrane sastojke u jedinstveno restoransko iskustvo.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="navigate('reservations')">
+            <span>✦</span> Rezerviraj stol
+          </button>
+          <button class="btn btn-outline" onclick="navigate('menu')">
+            Pogledaj jelovnik
+          </button>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span class="hero-scroll-text">Istraži</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- PERKS STRIP -->
+    <div class="perks-strip">
+      <div class="perk-item">
+        <div class="perk-icon">🌿</div>
+        <span class="perk-text">Svježi i kvalitetni sastojci</span>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">✨</div>
+        <span class="perk-text">Moderan i ugodan ambijent</span>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">📖</div>
+        <span class="perk-text">Pažljivo osmišljen jelovnik</span>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">🤝</div>
+        <span class="perk-text">Idealno za poslovne večere</span>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">📱</div>
+        <span class="perk-text">Online rezervacije</span>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+    <section class="story-section">
+      <div class="story-inner">
+        <div class="story-visual reveal-left">
+          <div class="story-stat-badge">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Godina izvrsnosti</span>
+          </div>
+          <div class="story-img-main"></div>
+          <div class="story-img-accent"></div>
+        </div>
+        <div class="story-text">
+          <span class="section-eyebrow">— Naša priča</span>
+          <h2 class="section-title">Gastronomija koja<br>nadahnjuje</h2>
+          <div class="section-divider"></div>
+          <p>Aurora Bistro & Grill je moderan restoran koji gostima nudi spoj vrhunske kuhinje, elegantnog interijera i opuštene atmosfere. Svako jelo nastaje s pažnjom, od pažljivo odabranih svježih namirnica do kreativne prezentacije koja oduševljava.</p>
+          <p>Naša filozofija temelji se na kvalitetnim sastojcima, sezonskim namirnicama, mediteranskim i europskim okusima i gostoprimstvu koje svaku posjetu čini posebnom.</p>
+          <div class="philosophy-card">
+            <p>"Vjerujemo da odličan restoran nije samo mjesto za obrok, već prostor za doživljaj, druženje i stvaranje uspomena."</p>
+          </div>
+          <br>
+          <button class="btn btn-outline-dark" onclick="navigate('about')">Saznaj više o nama</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED DISHES -->
+    <section class="featured-section" style="padding-top:100px;padding-bottom:100px;">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow">— Iz naše kuhinje</span>
+          <h2 class="section-title light">Izdvajamo<br>iz jelovnika</h2>
+          <div class="section-divider center"></div>
+          <p style="color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto;font-size:15px;">Pažljivo osmišljene kreacije našeg kuhara koje osvajaju i srce i nepce</p>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <div class="dish-card dc-1">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-badge">Chef's Pick</div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🥩</span>
+            <div class="dish-name">Beef Tagliata</div>
+            <div class="dish-desc">Juneći ramstek, rikola, cherry rajčice, parmezan</div>
+            <div class="dish-price">24 €</div>
+          </div>
+        </div>
+        <div class="dish-card dc-2">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🐟</span>
+            <div class="dish-name">File lososa s povrćem</div>
+            <div class="dish-desc">Losos na žaru, povrće na maslacu, citrusni umak</div>
+            <div class="dish-price">22 €</div>
+          </div>
+        </div>
+        <div class="dish-card dc-3">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🍤</span>
+            <div class="dish-name">Rižoto s kozicama</div>
+            <div class="dish-desc">Kremasti rižoto, kozice, bijelo vino, svježi začini</div>
+            <div class="dish-price">19 €</div>
+          </div>
+        </div>
+        <div class="dish-card dc-4">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🧀</span>
+            <div class="dish-name">Burrata s pestom</div>
+            <div class="dish-desc">Kremasta burrata, domaći pesto, cherry rajčice</div>
+            <div class="dish-price">13 €</div>
+          </div>
+        </div>
+        <div class="dish-card dc-5">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🍗</span>
+            <div class="dish-name">Pileći medaljoni</div>
+            <div class="dish-desc">Sočni medaljoni, kremasti umak od gljiva, njoki</div>
+            <div class="dish-price">18 €</div>
+          </div>
+        </div>
+        <div class="dish-card dc-6">
+          <div class="dish-card-bg"></div>
+          <div class="dish-card-overlay"></div>
+          <div class="dish-badge">Dessert</div>
+          <div class="dish-card-content">
+            <span class="dish-emoji">🍫</span>
+            <div class="dish-name">Lava Cake</div>
+            <div class="dish-desc">Topli čokoladni kolač, tekuća sredina, sladoled</div>
+            <div class="dish-price">7 €</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <button class="btn btn-outline-gold" onclick="navigate('menu')">Pogledaj cijeli jelovnik</button>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section" style="padding:100px 80px;">
+      <div class="experience-inner">
+        <div class="reveal-left">
+          <span class="section-eyebrow">— Doživljaj restorana</span>
+          <h2 class="section-title light" style="margin-bottom:16px;">Više od<br>restorana</h2>
+          <div class="section-divider"></div>
+          <p style="color:rgba(255,255,255,0.55);font-size:15.5px;line-height:1.8;margin-bottom:8px;">Elegantan interijer, ugodna rasvjeta i profesionalna usluga kreiraju savršen ambijent. Idealno za romantične večere, obiteljska okupljanja i poslovne sastanke.</p>
+          <div class="experience-features">
+            <div class="exp-feature">
+              <span class="exp-feature-icon">🕯️</span>
+              <div class="exp-feature-title">Ugodna atmosfera</div>
+              <div class="exp-feature-text">Pažljivo osmišljena rasvjeta i interijer koji stvaraju savršen ambijent</div>
+            </div>
+            <div class="exp-feature">
+              <span class="exp-feature-icon">🍷</span>
+              <div class="exp-feature-title">Vinska karta</div>
+              <div class="exp-feature-text">Pažljivo odabrana domaća i europska vina za svaki okus</div>
+            </div>
+            <div class="exp-feature">
+              <span class="exp-feature-icon">👨‍🍳</span>
+              <div class="exp-feature-title">Vrhunska kuhinja</div>
+              <div class="exp-feature-text">Kreativna jela od sezonskih namirnica pripremljena s ljubavlju</div>
+            </div>
+            <div class="exp-feature">
+              <span class="exp-feature-icon">🌿</span>
+              <div class="exp-feature-title">Terasa</div>
+              <div class="exp-feature-text">Lijepa terasa za ugodan ručak ili večeru na otvorenom</div>
+            </div>
+          </div>
+        </div>
+        <div class="experience-visual reveal-right">
+          <div class="exp-main-img"></div>
+          <div class="exp-float-card">
+            <div class="exp-float-icon">⭐</div>
+            <div>
+              <div class="exp-float-title">4.9 / 5</div>
+              <div class="exp-float-sub">Ocjena gostiju</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow">— Recenzije gostiju</span>
+          <h2 class="section-title">Što kažu<br>naši gosti</h2>
+          <div class="section-divider center"></div>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal stagger-1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Predivan ambijent, izvrsna hrana i usluga na visokoj razini. Definitivno jedno od najboljih restoranskih iskustava u Osijeku."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div>
+                <div class="author-name">Marija Kovačić</div>
+                <div class="author-info">Osijek · Obiteljska večera</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal stagger-2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Jedan od najljepših restorana koje smo posjetili. Odličan rižoto s kozicama i izvanredna usluga. Svakako se vraćamo."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">T</div>
+              <div>
+                <div class="author-name">Tomislav Horvatić</div>
+                <div class="author-info">Zagreb · Romantična večera</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal stagger-3">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Odličan izbor jela, prekrasna prezentacija i vrlo ljubazno osoblje. Poslovni ručak protekao je savršeno. Topla preporuka!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <div class="author-name">Ana Blažević</div>
+                <div class="author-info">Osijek · Poslovni ručak</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal stagger-4">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Beef Tagliata je jednostavno izvanredna. Svježi sastojci, savršena prezentacija i sommelier koji zna što preporučiti."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">I</div>
+              <div>
+                <div class="author-name">Ivan Jurić</div>
+                <div class="author-info">Vinkovci · Proslava</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal stagger-5">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Proslavili smo godišnjicu u Aurori i bilo je savršeno. Osoblje je išlo iznad i izvan svega da osigura nezaboravan doživljaj."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <div class="author-name">Sandra & Petar</div>
+                <div class="author-info">Đakovo · Godišnjica</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal stagger-6">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Lava cake je zakon! Cijeli jelovnik je na visokom nivou, a ambijent večernje Aurore stvara posebnu magiju."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">K</div>
+              <div>
+                <div class="author-name">Kristina Matić</div>
+                <div class="author-info">Osijek · Redoviti gost</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <span class="section-eyebrow">— Rezervirajte danas</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Rezervirajte svoje<br>mjesto već danas</h2>
+        <div class="section-divider center"></div>
+        <p>Bilo da planirate ručak, večeru ili posebno druženje, naš tim će se pobrinuti za vrhunsko iskustvo koje dugo pamtite.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('reservations')">
+            ✦ Rezerviraj stol online
+          </button>
+          <a class="btn btn-outline" href="tel:+385993254488">
+            📞 +385 99 325 4488
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">Aurora Bistro</div>
+            <span class="footer-logo-sub">& Grill — Osijek</span>
+            <p class="footer-brand-text">Moderan premium restoran u srcu Osijeka. Vrhunska gastronomija, elegantan ambijent i nezaboravno iskustvo za svaku prigodu.</p>
+            <div class="social-row">
+              <a class="social-btn" href="#" title="Instagram">📷</a>
+              <a class="social-btn" href="#" title="Facebook">f</a>
+              <a class="social-btn" href="#" title="TripAdvisor">🍽</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Navigacija</div>
+            <ul class="footer-links">
+              <li><a onclick="navigate('home')">Početna</a></li>
+              <li><a onclick="navigate('about')">O nama</a></li>
+              <li><a onclick="navigate('menu')">Jelovnik</a></li>
+              <li><a onclick="navigate('gallery')">Galerija</a></li>
+              <li><a onclick="navigate('reservations')">Rezervacije</a></li>
+              <li><a onclick="navigate('events')">Događanja</a></li>
+              <li><a onclick="navigate('contact')">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Kontakt</div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📍</span>
+              <span class="footer-contact-text">Ulica kralja Tomislava 24<br>31000 Osijek, Hrvatska</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📞</span>
+              <span class="footer-contact-text">+385 99 325 4488</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">✉️</span>
+              <span class="footer-contact-text">info@aurorabistro.hr</span>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="navigate('reservations')" style="padding:12px 24px;font-size:11px;">
+              Rezerviraj stol
+            </button>
+          </div>
+          <div>
+            <div class="footer-col-title">Radno vrijeme</div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10:00 – 23:00</span></div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10:00 – 00:00</span></div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11:00 – 22:00</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copyright">© 2025 Aurora Bistro & Grill. Sva prava pridržana.</span>
+          <div class="footer-bottom-links">
+            <a href="#">Privatnost</a>
+            <a href="#">Uvjeti korištenja</a>
+            <a href="#">Kolačići</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== ABOUT PAGE ===================== -->
+  <div class="page" id="page-about">
+    <div class="about-hero">
+      <div class="about-hero-inner">
+        <span class="section-eyebrow">— O Aurora Bistro & Grill</span>
+        <h1 class="page-hero-title" style="margin-top:14px;">Strast prema hrani,<br><em>posvećenost</em> gostima</h1>
+        <p class="page-hero-sub">Svaka posjeta Aurora Bistro & Grill trebala bi biti nezaboravno iskustvo. To je naše obećanje koje čuvamo svaki dan.</p>
+      </div>
+    </div>
+    <section class="about-philosophy">
+      <div class="philosophy-inner">
+        <div class="section-header">
+          <span class="section-eyebrow">— Naša filozofija</span>
+          <h2 class="section-title" style="margin-top:14px;">Aurora Bistro & Grill —<br>više od restorana</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="philosophy-grid">
+          <div class="phil-text reveal-left">
+            <p>Aurora Bistro & Grill je moderan restoran koji gostima nudi spoj vrhunske kuhinje, elegantnog interijera i opuštene atmosfere. Naša filozofija temelji se na kvalitetnim sastojcima, pažljivo osmišljenim jelima i gostoprimstvu koje svaku posjetu čini posebnom.</p>
+            <p>Spajamo suvremenu kuhinju s mediteranskim i europskim utjecajima, koristeći sezonske namirnice od pouzdanih domaćih dobavljača. Svako jelo je platno na kojemu kuhar iskazuje svoje umijeće i ljubav prema gastronomiji.</p>
+            <p>Od prvog koraka u naš restoran do posljednje kapi vina, svaki detalj je osmišljen s jednom jedinom misli — da naš gost ode sa smiješkom i željom da se vrati.</p>
+          </div>
+          <div class="reveal-right">
+            <div class="phil-quote">
+              <p class="phil-quote-text">"Vjerujemo da odličan restoran nije samo mjesto za obrok, već prostor za doživljaj, druženje i stvaranje uspomena koje traju čitav život."</p>
+              <div class="phil-quote-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-us-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow">— Zašto nas gosti vole</span>
+          <h2 class="section-title" style="margin-top:14px;">Ono što nas<br>čini posebnim</h2>
+          <div class="section-divider center"></div>
+        </div>
+        <div class="why-grid">
+          <div class="why-card reveal stagger-1">
+            <div class="why-card-number">01</div>
+            <span class="why-card-icon">🏛️</span>
+            <div class="why-card-title">Premium ambijent</div>
+            <p class="why-card-text">Moderan i pažljivo osmišljen interijer koji stvara savršenu atmosferu za svaku prigodu.</p>
+          </div>
+          <div class="why-card reveal stagger-2">
+            <div class="why-card-number">02</div>
+            <span class="why-card-icon">🌿</span>
+            <div class="why-card-title">Svježe namirnice</div>
+            <p class="why-card-text">Biramo samo najkvalitetnije sezonske namirnice od pouzdanih domaćih dobavljača.</p>
+          </div>
+          <div class="why-card reveal stagger-3">
+            <div class="why-card-number">03</div>
+            <span class="why-card-icon">👨‍🍳</span>
+            <div class="why-card-title">Kreativna kuhinja</div>
+            <p class="why-card-text">Mediteranski i europski utjecaji u modernom ruhu — kuhareva vizija na vašem tanjuru.</p>
+          </div>
+          <div class="why-card reveal stagger-4">
+            <div class="why-card-number">04</div>
+            <span class="why-card-icon">🍷</span>
+            <div class="why-card-title">Vinska karta</div>
+            <p class="why-card-text">Pažljivo odabrana domaća i europska vina koja savršeno upotpunjuju svaki obrok.</p>
+          </div>
+          <div class="why-card reveal stagger-5">
+            <div class="why-card-number">05</div>
+            <span class="why-card-icon">🤝</span>
+            <div class="why-card-title">Profesionalna usluga</div>
+            <p class="why-card-text">Ljubazno i educirano osoblje koje se brine za svaki detalj vašeg boravka kod nas.</p>
+          </div>
+          <div class="why-card reveal stagger-6">
+            <div class="why-card-number">06</div>
+            <span class="why-card-icon">🎉</span>
+            <div class="why-card-title">Za sve prigode</div>
+            <p class="why-card-text">Od romantičnih večera do poslovnih ručkova i obiteljskih proslava — Aurora je uvijek pravo mjesto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team-section">
+      <div class="team-inner">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow">— Naš tim</span>
+          <h2 class="section-title light" style="margin-top:14px;">Posvećeni<br>izvrsnosti</h2>
+          <div class="section-divider center"></div>
+          <p class="team-intro">Naš tim kuhara, konobara i domaćina dijeli istu strast — pružiti gostima iskustvo koje premašuje očekivanja. Svaki dan, svaki gost.</p>
+        </div>
+        <div class="team-visual reveal">
+          <div class="team-role">
+            <div class="team-role-icon">👨‍🍳</div>
+            <div class="team-role-title">Kuharski tim</div>
+            <p class="team-role-text">Iskusni kuhari s europskim iskustvom koji svako jelo pretvaraju u kulinarsko djelo.</p>
+          </div>
+          <div class="team-role">
+            <div class="team-role-icon">🍽️</div>
+            <div class="team-role-title">Servisno osoblje</div>
+            <p class="team-role-text">Pažljivi i educirani konobari koji čitaju vaše potrebe i uvijek su tu u pravo vrijeme.</p>
+          </div>
+          <div class="team-role">
+            <div class="team-role-icon">🏠</div>
+            <div class="team-role-title">Domaćini</div>
+            <p class="team-role-text">Naši domaćini osiguravaju topao doček i brigu o svakom detalju vašeg boravka.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <span class="section-eyebrow">— Dođite nas posjetiti</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Upoznajte Auroru<br>osobno</h2>
+        <div class="section-divider center"></div>
+        <p>Rezervirajte stol i uvjerite se zašto su naši gosti uvijek sretni što su nas posjetili.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('reservations')">Rezerviraj stol</button>
+          <button class="btn btn-outline" onclick="navigate('menu')">Pogledaj jelovnik</button>
+        </div>
+      </div>
+    </section>
+    <footer id="footer-about">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">Aurora Bistro</div>
+            <span class="footer-logo-sub">& Grill — Osijek</span>
+            <p class="footer-brand-text">Moderan premium restoran u srcu Osijeka za sve prigode.</p>
+            <div class="social-row">
+              <a class="social-btn" href="#">📷</a>
+              <a class="social-btn" href="#">f</a>
+              <a class="social-btn" href="#">🍽</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Stranice</div>
+            <ul class="footer-links">
+              <li><a onclick="navigate('home')">Početna</a></li>
+              <li><a onclick="navigate('about')">O nama</a></li>
+              <li><a onclick="navigate('menu')">Jelovnik</a></li>
+              <li><a onclick="navigate('gallery')">Galerija</a></li>
+              <li><a onclick="navigate('reservations')">Rezervacije</a></li>
+              <li><a onclick="navigate('events')">Događanja</a></li>
+              <li><a onclick="navigate('contact')">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Kontakt</div>
+            <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ulica kralja Tomislava 24, 31000 Osijek</span></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div>
+          </div>
+          <div>
+            <div class="footer-col-title">Radno vrijeme</div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10:00 – 23:00</span></div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10:00 – 00:00</span></div>
+            <div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11:00 – 22:00</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copyright">© 2025 Aurora Bistro & Grill. Sva prava pridržana.</span>
+          <div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== MENU PAGE ===================== -->
+  <div class="page" id="page-menu">
+    <div class="menu-hero">
+      <div class="menu-hero-inner">
+        <span class="section-eyebrow">— Aurora Bistro & Grill</span>
+        <h1 class="page-hero-title" style="color:var(--white);text-align:center;margin-top:14px;">Jelovnik<br><em>i cijene</em></h1>
+        <p style="color:rgba(255,255,255,0.55);font-size:15px;max-width:480px;margin:20px auto 0;text-align:center;line-height:1.75;">Pažljivo osmišljene kreacije od svježih sezonskih namirnica — mediteranski i europski okusi u modernom ruhu</p>
+      </div>
+    </div>
+    <div class="menu-tabs">
+      <div class="menu-tabs-inner" id="menuTabs">
+        <button class="menu-tab active" data-cat="starters">Predjela</button>
+        <button class="menu-tab" data-cat="soups">Juhe</button>
+        <button class="menu-tab" data-cat="mains">Glavna jela</button>
+        <button class="menu-tab" data-cat="pasta">Tjestenine & Rižota</button>
+        <button class="menu-tab" data-cat="salads">Salate</button>
+        <button class="menu-tab" data-cat="pizza">Pizze</button>
+        <button class="menu-tab" data-cat="desserts">Deserti</button>
+        <button class="menu-tab" data-cat="drinks">Pića</button>
+      </div>
+    </div>
+    <div class="menu-content">
+      <div class="menu-content-inner">
+
+        <!-- STARTERS -->
+        <div class="menu-category active" id="cat-starters">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Predjela</div>
+            <div class="menu-cat-sub">Savršen uvod u gastronomsko putovanje</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Burrata s pestom i cherry rajčicama <span class="item-tag tag-veg">🌿 veg</span> <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">13 €</div>
+              </div>
+              <div class="menu-item-desc">Kremasta burrata, domaći pesto, cherry rajčice, maslinovo ulje i focaccia.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Carpaccio od junetine</div>
+                <div class="menu-item-price">14 €</div>
+              </div>
+              <div class="menu-item-desc">Tanko rezana junetina, rikola, parmezan, limun i maslinovo ulje.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Bruschette trio <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">10 €</div>
+              </div>
+              <div class="menu-item-desc">Tri vrste bruschetta s rajčicom, pršutom i krem sirom.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOUPS -->
+        <div class="menu-category" id="cat-soups">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Juhe</div>
+            <div class="menu-cat-sub">Toplo i utješno, od svježih sezonskih sastojaka</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Krem juha od rajčice <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">6 €</div>
+              </div>
+              <div class="menu-item-desc">Poslužena s hrskavim kruhom i bosiljkom.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Juha dana</div>
+                <div class="menu-item-price">5 €</div>
+              </div>
+              <div class="menu-item-desc">Sezonska juha pripremljena od svježih sastojaka.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAINS -->
+        <div class="menu-category" id="cat-mains">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Glavna jela</div>
+            <div class="menu-cat-sub">Srce našeg jelovnika — remek-djela od premium namirnica</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Beef Tagliata <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">24 €</div>
+              </div>
+              <div class="menu-item-desc">Juneći ramstek, rikola, cherry rajčice, parmezan i pečeni krumpir.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">File lososa s povrćem</div>
+                <div class="menu-item-price">22 €</div>
+              </div>
+              <div class="menu-item-desc">Losos na žaru, povrće na maslacu i lagani citrusni umak.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Rižoto s kozicama <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">19 €</div>
+              </div>
+              <div class="menu-item-desc">Kremasti rižoto s kozicama, bijelim vinom i svježim začinima.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Pileći medaljoni u umaku od gljiva</div>
+                <div class="menu-item-price">18 €</div>
+              </div>
+              <div class="menu-item-desc">Sočni pileći medaljoni, kremasti umak od gljiva i domaći njoki.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Teleći medaljoni u umaku od papra</div>
+                <div class="menu-item-price">26 €</div>
+              </div>
+              <div class="menu-item-desc">Teleći file, kremasti umak od zelenog papra, pire krumpir.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Burger Aurora</div>
+                <div class="menu-item-price">16 €</div>
+              </div>
+              <div class="menu-item-desc">Juneća pljeskavica, cheddar, karamelizirani luk, umak kuće i pommes frites.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASTA -->
+        <div class="menu-category" id="cat-pasta">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Tjestenine & Rižota</div>
+            <div class="menu-cat-sub">Talijanski klasici u Aurora interpretaciji</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Tagliatelle s biftekom <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">21 €</div>
+              </div>
+              <div class="menu-item-desc">Svježa tjestenina, komadi bifteka, vrhnje, parmezan i tartufata.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Ravioli punjeni sirom <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">17 €</div>
+              </div>
+              <div class="menu-item-desc">Ravioli u umaku od maslaca i kadulje.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Rižoto s povrćem <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">15 €</div>
+              </div>
+              <div class="menu-item-desc">Kremasti sezonski rižoto s povrćem i parmezanom.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SALADS -->
+        <div class="menu-category" id="cat-salads">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Salate</div>
+            <div class="menu-cat-sub">Svježe, lagane i prepune okusa</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Cezar salata s piletinom</div>
+                <div class="menu-item-price">13 €</div>
+              </div>
+              <div class="menu-item-desc">Rimska salata, piletina, krutoni, parmezan i Caesar dressing.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Salata s tunom</div>
+                <div class="menu-item-price">12 €</div>
+              </div>
+              <div class="menu-item-desc">Miješana salata, tuna, masline, kukuruz i jaje.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Salata Aurora <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">14 €</div>
+              </div>
+              <div class="menu-item-desc">Miješana salata, burrata, avokado, orašasti plodovi i dressing od meda.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZA -->
+        <div class="menu-category" id="cat-pizza">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Pizze</div>
+            <div class="menu-cat-sub">Klasici i Aurora specijaliteti — tanka, hrskava kora</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Margherita <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">10 €</div>
+              </div>
+              <div class="menu-item-desc">Rajčica, mozzarella, bosiljak.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Capricciosa</div>
+                <div class="menu-item-price">12 €</div>
+              </div>
+              <div class="menu-item-desc">Rajčica, mozzarella, šunka, gljive.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Prosciutto e Rucola</div>
+                <div class="menu-item-price">14 €</div>
+              </div>
+              <div class="menu-item-desc">Rajčica, mozzarella, pršut, rikola, parmezan.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Aurora Special <span class="item-tag tag-chef">👨‍🍳 chef</span> <span class="item-tag tag-spicy">🌶 ljuto</span></div>
+                <div class="menu-item-price">15 €</div>
+              </div>
+              <div class="menu-item-desc">Rajčica, mozzarella, kulen, panceta, gljive, paprika.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-category" id="cat-desserts">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Deserti</div>
+            <div class="menu-cat-sub">Sladak završetak savršenog obroka</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="menu-items-grid">
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Lava Cake <span class="item-tag tag-chef">👨‍🍳 chef</span></div>
+                <div class="menu-item-price">7 €</div>
+              </div>
+              <div class="menu-item-desc">Topli čokoladni kolač s tekućom sredinom i sladoledom od vanilije.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Cheesecake</div>
+                <div class="menu-item-price">6 €</div>
+              </div>
+              <div class="menu-item-desc">Kremasti cheesecake sa šumskim voćem.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Panna Cotta <span class="item-tag tag-veg">🌿 veg</span></div>
+                <div class="menu-item-price">6 €</div>
+              </div>
+              <div class="menu-item-desc">Panna cotta s preljevom od maline.</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-header">
+                <div class="menu-item-name">Tiramisu</div>
+                <div class="menu-item-price">7 €</div>
+              </div>
+              <div class="menu-item-desc">Klasični talijanski desert.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-category" id="cat-drinks">
+          <div class="menu-cat-header">
+            <div class="menu-cat-title">Pića</div>
+            <div class="menu-cat-sub">Bezalkoholna, piva, vina i topli napici</div>
+            <div class="section-divider" style="margin-top:16px;"></div>
+          </div>
+          <div class="drinks-group">
+            <div class="drinks-group-title">Bezalkoholna pića</div>
+            <div class="menu-items-list">
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Coca-Cola 0.25</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Coca-Cola Zero 0.25</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Fanta 0.25</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sprite 0.25</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cedevita</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Prirodni sokovi</div><div class="menu-item-price">3.50 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Voda negazirana 0.75</div><div class="menu-item-price">4 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Mineralna voda 0.75</div><div class="menu-item-price">4 €</div></div></div>
+            </div>
+          </div>
+          <div class="drinks-group">
+            <div class="drinks-group-title">Piva</div>
+            <div class="menu-items-list">
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Točeno pivo 0.5</div><div class="menu-item-price">4 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Craft pivo 0.33</div><div class="menu-item-price">5 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Heineken 0.33</div><div class="menu-item-price">4.50 €</div></div></div>
+            </div>
+          </div>
+          <div class="drinks-group">
+            <div class="drinks-group-title">Vina</div>
+            <div class="menu-items-list">
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Kućno vino bijelo 0.1</div><div class="menu-item-price">3.50 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Kućno vino crno 0.1</div><div class="menu-item-price">3.50 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Graševina — boca</div><div class="menu-item-price">22 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Malvazija — boca</div><div class="menu-item-price">24 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cabernet Sauvignon — boca</div><div class="menu-item-price">28 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Plavac Mali — boca</div><div class="menu-item-price">29 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Pjenušac — boca</div><div class="menu-item-price">35 €</div></div></div>
+            </div>
+          </div>
+          <div class="drinks-group">
+            <div class="drinks-group-title">Topli napici</div>
+            <div class="menu-items-list">
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Espresso</div><div class="menu-item-price">2 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cappuccino</div><div class="menu-item-price">2.50 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Latte</div><div class="menu-item-price">3 €</div></div></div>
+              <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Čaj</div><div class="menu-item-price">2.50 €</div></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <span class="section-eyebrow">— Rezervirajte danas</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Spremni za<br>savršenu večeru?</h2>
+        <div class="section-divider center"></div>
+        <p>Rezervirajte stol i uživajte u svemu što jelovnik Aurore ima za ponuditi.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('reservations')">Rezerviraj stol</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand"><div class="footer-logo">Aurora Bistro</div><span class="footer-logo-sub">& Grill — Osijek</span><p class="footer-brand-text">Premium restoran u Osijeku.</p><div class="social-row"><a class="social-btn" href="#">📷</a><a class="social-btn" href="#">f</a><a class="social-btn" href="#">🍽</a></div></div>
+          <div><div class="footer-col-title">Stranice</div><ul class="footer-links"><li><a onclick="navigate('home')">Početna</a></li><li><a onclick="navigate('about')">O nama</a></li><li><a onclick="navigate('menu')">Jelovnik</a></li><li><a onclick="navigate('gallery')">Galerija</a></li><li><a onclick="navigate('reservations')">Rezervacije</a></li><li><a onclick="navigate('events')">Događanja</a></li><li><a onclick="navigate('contact')">Kontakt</a></li></ul></div>
+          <div><div class="footer-col-title">Kontakt</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ul. kralja Tomislava 24, Osijek</span></div><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div></div>
+          <div><div class="footer-col-title">Radno vrijeme</div><div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10–23h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10–00h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11–22h</span></div></div>
+        </div>
+        <div class="footer-bottom"><span class="footer-copyright">© 2025 Aurora Bistro & Grill.</span><div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti</a></div></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== GALLERY PAGE ===================== -->
+  <div class="page" id="page-gallery">
+    <div class="gallery-hero" style="padding:160px 80px 80px;">
+      <span class="section-eyebrow">— Aurora Bistro & Grill</span>
+      <h1 class="page-hero-title" style="color:var(--white);text-align:center;margin-top:14px;">Galerija<br><em>doživljaja</em></h1>
+      <p style="color:rgba(255,255,255,0.55);text-align:center;margin-top:16px;font-size:15px;">Interijer, terasa, jela i trenuci koji čine Auroru posebnom</p>
+    </div>
+    <section class="gallery-section">
+      <div class="gallery-grid">
+        <div class="gallery-item gi-1 wide tall" onclick="openLightbox(this,'Restoranski interijer')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🍽️</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Restoranski interijer</span></div>
+        </div>
+        <div class="gallery-item gi-2" onclick="openLightbox(this,'Beef Tagliata')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🥩</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Beef Tagliata</span></div>
+        </div>
+        <div class="gallery-item gi-3" onclick="openLightbox(this,'Rižoto s kozicama')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🦐</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Rižoto s kozicama</span></div>
+        </div>
+        <div class="gallery-item gi-4" onclick="openLightbox(this,'Vinska karta')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🍷</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Vinska karta</span></div>
+        </div>
+        <div class="gallery-item gi-5 tall" onclick="openLightbox(this,'Terasa Aurore')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🌿</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Terasa Aurore</span></div>
+        </div>
+        <div class="gallery-item gi-6" onclick="openLightbox(this,'Lava Cake')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🍫</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Lava Cake</span></div>
+        </div>
+        <div class="gallery-item gi-7" onclick="openLightbox(this,'Burrata s pestom')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🧀</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Burrata s pestom</span></div>
+        </div>
+        <div class="gallery-item gi-8 wide" onclick="openLightbox(this,'Večernja atmosfera')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🕯️</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Večernja atmosfera</span></div>
+        </div>
+        <div class="gallery-item gi-9" onclick="openLightbox(this,'File lososa')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">🐟</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">File lososa</span></div>
+        </div>
+        <div class="gallery-item gi-10" onclick="openLightbox(this,'Detalji ambijenta')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">✨</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Detalji ambijenta</span></div>
+        </div>
+        <div class="gallery-item gi-11" onclick="openLightbox(this,'Osoblje Aurore')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">👨‍🍳</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Osoblje Aurore</span></div>
+        </div>
+        <div class="gallery-item gi-12" onclick="openLightbox(this,'Tiramisu')">
+          <div class="gallery-item-bg"><div class="gallery-emoji">☕</div></div>
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+          <div class="gallery-label"><span class="gallery-label-text">Tiramisu</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <div class="lightbox-content" id="lightboxContent">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      </div>
+    </div>
+
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <span class="section-eyebrow">— Posjetite nas</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Doživite Auroru<br>uživo</h2>
+        <div class="section-divider center"></div>
+        <p>Fotografije ne mogu prenijeti svu ljepotu restoranskog iskustva — rezervirajte stol i uvjerite se sami.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('reservations')">Rezerviraj stol</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand"><div class="footer-logo">Aurora Bistro</div><span class="footer-logo-sub">& Grill — Osijek</span><p class="footer-brand-text">Premium restoran u Osijeku.</p><div class="social-row"><a class="social-btn" href="#">📷</a><a class="social-btn" href="#">f</a><a class="social-btn" href="#">🍽</a></div></div>
+          <div><div class="footer-col-title">Stranice</div><ul class="footer-links"><li><a onclick="navigate('home')">Početna</a></li><li><a onclick="navigate('about')">O nama</a></li><li><a onclick="navigate('menu')">Jelovnik</a></li><li><a onclick="navigate('gallery')">Galerija</a></li><li><a onclick="navigate('reservations')">Rezervacije</a></li><li><a onclick="navigate('events')">Događanja</a></li><li><a onclick="navigate('contact')">Kontakt</a></li></ul></div>
+          <div><div class="footer-col-title">Kontakt</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ul. kralja Tomislava 24, Osijek</span></div><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div></div>
+          <div><div class="footer-col-title">Radno vrijeme</div><div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10–23h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10–00h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11–22h</span></div></div>
+        </div>
+        <div class="footer-bottom"><span class="footer-copyright">© 2025 Aurora Bistro & Grill.</span><div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti</a></div></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== RESERVATIONS PAGE ===================== -->
+  <div class="page" id="page-reservations">
+    <div class="reservations-hero">
+      <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;text-align:center;">
+        <span class="section-eyebrow">— Online rezervacija</span>
+        <h1 class="page-hero-title" style="color:var(--white);text-align:center;margin-top:14px;">Rezervirajte<br><em>svoj stol</em> online</h1>
+        <p style="color:rgba(255,255,255,0.55);font-size:15px;max-width:460px;margin:16px auto 0;line-height:1.75;">Pošaljite upit za rezervaciju i naš tim će vam potvrditi termin u najkraćem roku.</p>
+      </div>
+    </div>
+    <section class="reservations-section">
+      <div class="reservations-inner">
+        <div class="res-info">
+          <div class="res-info-card reveal-left">
+            <div class="res-info-title">Informacije</div>
+            <ul class="res-info-list">
+              <li>
+                <span class="res-info-icon">⏰</span>
+                <div class="res-info-text">
+                  <strong>Radno vrijeme</strong>
+                  Pon–Čet: 10:00–23:00<br>
+                  Pet–Sub: 10:00–00:00<br>
+                  Ned: 11:00–22:00
+                </div>
+              </li>
+              <li>
+                <span class="res-info-icon">📍</span>
+                <div class="res-info-text">
+                  <strong>Adresa</strong>
+                  Ulica kralja Tomislava 24<br>
+                  31000 Osijek, Hrvatska
+                </div>
+              </li>
+              <li>
+                <span class="res-info-icon">🅿️</span>
+                <div class="res-info-text">
+                  <strong>Parking</strong>
+                  Besplatan parking dostupan uz restoran
+                </div>
+              </li>
+              <li>
+                <span class="res-info-icon">👨‍👩‍👧‍👦</span>
+                <div class="res-info-text">
+                  <strong>Grupe i events</strong>
+                  Za grupe 10+ i posebne događaje kontaktirajte nas direktno
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="res-direct reveal-left stagger-2">
+            <p class="res-direct-text">Preferirate rezervaciju putem telefona? Nazovite nas i rezervirajte odmah.</p>
+            <a class="btn btn-dark" href="tel:+385993254488" style="justify-content:center;width:100%;margin-bottom:12px;">
+              📞 +385 99 325 4488
+            </a>
+            <p style="font-size:12px;color:var(--text-lighter);line-height:1.6;">Za grupe i posebne događaje kontaktirajte nas direktno na <a href="mailto:info@aurorabistro.hr" style="color:var(--gold);">info@aurorabistro.hr</a></p>
+          </div>
+        </div>
+        <div class="res-form-card reveal-right">
+          <div id="formMain">
+            <div class="form-title">Nova rezervacija</div>
+            <p class="form-sub">Popunite obrazac i kontaktirat ćemo vas u roku od 2 sata za potvrdu termina.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Ime i prezime *</label>
+                <input class="form-control" type="text" placeholder="Vaše ime i prezime" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Telefon *</label>
+                <input class="form-control" type="tel" placeholder="+385 XX XXX XXXX" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail adresa *</label>
+                <input class="form-control" type="email" placeholder="vasa@email.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Broj osoba *</label>
+                <select class="form-control">
+                  <option value="">Odaberi...</option>
+                  <option>1 osoba</option>
+                  <option>2 osobe</option>
+                  <option>3 osobe</option>
+                  <option>4 osobe</option>
+                  <option>5 osoba</option>
+                  <option>6 osoba</option>
+                  <option>7–10 osoba</option>
+                  <option>10+ osoba (grupa)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Datum *</label>
+                <input class="form-control" type="date" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Željeno vrijeme *</label>
+                <select class="form-control">
+                  <option value="">Odaberi...</option>
+                  <option>10:00</option><option>11:00</option><option>12:00</option>
+                  <option>13:00</option><option>14:00</option><option>15:00</option>
+                  <option>16:00</option><option>17:00</option><option>18:00</option>
+                  <option>19:00</option><option>20:00</option><option>21:00</option>
+                  <option>22:00</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Posebne napomene</label>
+                <textarea class="form-control" placeholder="Alergije, posebne prigode, prehrambene preferencije, posebni zahtjevi..."></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary form-submit" onclick="submitForm()">
+              ✦ Pošalji rezervaciju
+            </button>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <span class="success-icon">✅</span>
+            <div class="success-title">Rezervacija primljena!</div>
+            <p class="success-text">Hvala na rezervaciji. Naš tim će vas kontaktirati u roku od 2 sata radi potvrde termina. Veselimo se vašem dolasku!</p>
+            <br>
+            <button class="btn btn-outline-dark" onclick="resetForm()" style="margin-top:16px;">Nova rezervacija</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <div class="cta-inner">
+        <span class="section-eyebrow">— Posebni zahtjevi</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Planirate posebno<br>događanje?</h2>
+        <div class="section-divider center"></div>
+        <p>Za proslave, poslovne domjenke i privatne večere — kontaktirajte nas direktno za prilagođenu ponudu.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('events')">Pogledaj događanja</button>
+          <button class="btn btn-outline" onclick="navigate('contact')">Kontaktirajte nas</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand"><div class="footer-logo">Aurora Bistro</div><span class="footer-logo-sub">& Grill — Osijek</span><p class="footer-brand-text">Premium restoran u Osijeku.</p><div class="social-row"><a class="social-btn" href="#">📷</a><a class="social-btn" href="#">f</a><a class="social-btn" href="#">🍽</a></div></div>
+          <div><div class="footer-col-title">Stranice</div><ul class="footer-links"><li><a onclick="navigate('home')">Početna</a></li><li><a onclick="navigate('about')">O nama</a></li><li><a onclick="navigate('menu')">Jelovnik</a></li><li><a onclick="navigate('gallery')">Galerija</a></li><li><a onclick="navigate('reservations')">Rezervacije</a></li><li><a onclick="navigate('events')">Događanja</a></li><li><a onclick="navigate('contact')">Kontakt</a></li></ul></div>
+          <div><div class="footer-col-title">Kontakt</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ul. kralja Tomislava 24, Osijek</span></div><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div></div>
+          <div><div class="footer-col-title">Radno vrijeme</div><div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10–23h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10–00h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11–22h</span></div></div>
+        </div>
+        <div class="footer-bottom"><span class="footer-copyright">© 2025 Aurora Bistro & Grill.</span><div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti</a></div></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== EVENTS PAGE ===================== -->
+  <div class="page" id="page-events">
+    <div class="events-hero">
+      <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;">
+        <span class="section-eyebrow">— Posebne prigode</span>
+        <h1 class="page-hero-title" style="color:var(--white);margin-top:14px;">Događanja<br><em>& Proslave</em></h1>
+        <p class="page-hero-sub">Od intimnih večera do poslovnih domjenaka — Aurora Bistro & Grill je savršeno mjesto za svaku posebnu prigodu.</p>
+      </div>
+    </div>
+    <section class="events-types">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow">— Što nudimo</span>
+          <h2 class="section-title" style="margin-top:14px;">Za svaku<br>posebnu prigodu</h2>
+          <div class="section-divider center"></div>
+        </div>
+        <div class="events-grid">
+          <div class="event-card reveal stagger-1">
+            <div class="event-card-visual ec-1"><span>🎂</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Rođendani & Proslave</div>
+              <p class="event-card-text">Proslavite poseban dan uz privatni prostor, prilagođen jelovnik i pažljivu dekoraciju prema vašim željama.</p>
+            </div>
+          </div>
+          <div class="event-card reveal stagger-2">
+            <div class="event-card-visual ec-2"><span>💼</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Poslovni domjenci</div>
+              <p class="event-card-text">Impresionite poslovne partnere elegantnim ambijentom i vrhunskom gastronomijom koja ostavlja trajni dojam.</p>
+            </div>
+          </div>
+          <div class="event-card reveal stagger-3">
+            <div class="event-card-visual ec-3"><span>💍</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Intimne proslave</div>
+              <p class="event-card-text">Godišnjice, zaruke ili posebni trenuci — Aurora pruža savršenu kulisu za nezaboravne uspomene.</p>
+            </div>
+          </div>
+          <div class="event-card reveal stagger-4">
+            <div class="event-card-visual ec-4"><span>🥂</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Degustacijske večeri</div>
+              <p class="event-card-text">Tematske gastronomske večeri uz pažljivo uparena vina i ekskluzivne kreacije šefa kuhinje.</p>
+            </div>
+          </div>
+          <div class="event-card reveal stagger-5">
+            <div class="event-card-visual ec-5"><span>🌙</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Tematske večeri</div>
+              <p class="event-card-text">Sezonske ponude, mediteranske noći, gastro iznenađenja — pratite nas za najave posebnih evento.</p>
+            </div>
+          </div>
+          <div class="event-card reveal stagger-6">
+            <div class="event-card-visual ec-6"><span>👨‍👩‍👧‍👦</span></div>
+            <div class="event-card-body">
+              <div class="event-card-title">Obiteljska okupljanja</div>
+              <p class="event-card-text">Obiteljski ručkovi i večere u toplom, prijateljskom okruženju koje odiše domačinskom atmosferom.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events-features">
+      <div class="features-inner">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">— Organizirajte događanje</span>
+          <h2 class="section-title light" style="margin-top:14px;">Profesionalna<br>organizacija</h2>
+          <div class="section-divider"></div>
+          <p style="color:rgba(255,255,255,0.5);font-size:15px;max-width:460px;line-height:1.8;">Naš tim će se pobrinuti za svaki detalj vašeg posebnog događanja — od jelovnika do dekoracije.</p>
+        </div>
+        <div class="features-cols">
+          <ul class="feature-list reveal-left">
+            <li>
+              <div class="feature-list-icon">🍽️</div>
+              <div>
+                <div class="feature-list-title">Prilagođen jelovnik</div>
+                <p class="feature-list-text">Kreacija posebnog jelovnika prema vašim željama, alergenima i broju gostiju.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-list-icon">🏛️</div>
+              <div>
+                <div class="feature-list-title">Privatni prostor</div>
+                <p class="feature-list-text">Mogućnost rezervacije privatnog dijela restorana za intimnija eventi.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-list-icon">🌸</div>
+              <div>
+                <div class="feature-list-title">Dekoracija & aranžmani</div>
+                <p class="feature-list-text">Suradnja s floristima i dekoraterima za savršen vizualni dojam.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-list-icon">🥂</div>
+              <div>
+                <div class="feature-list-title">Vinska selekcija</div>
+                <p class="feature-list-text">Sommelier preporuke i posebna vinska ponuda za vaše događanje.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="reveal-right">
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(200,169,110,0.2);border-radius:var(--radius-xl);padding:48px;text-align:center;">
+              <span style="font-size:64px;display:block;margin-bottom:20px;">🎊</span>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--white);margin-bottom:12px;">Do 80 gostiju</div>
+              <p style="color:rgba(255,255,255,0.45);font-size:14px;line-height:1.7;margin-bottom:28px;">Aurora prima do 80 gostiju za posebna eventi uz mogućnost privatnog najma cijelog prostora.</p>
+              <div style="border-top:1px solid rgba(200,169,110,0.2);padding-top:24px;margin-top:8px;">
+                <div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Kontakt za eventi</div>
+                <a href="mailto:info@aurorabistro.hr" style="color:rgba(255,255,255,0.7);font-size:15px;display:block;margin-bottom:8px;">info@aurorabistro.hr</a>
+                <a href="tel:+385993254488" style="color:rgba(255,255,255,0.7);font-size:15px;">+385 99 325 4488</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events-cta">
+      <div class="events-cta-inner reveal">
+        <span class="section-eyebrow">— Kontaktirajte nas</span>
+        <h2 class="section-title" style="color:var(--white);margin-top:14px;">Pošaljite upit<br>za događanje</h2>
+        <div class="section-divider center"></div>
+        <p style="color:rgba(255,255,255,0.6);margin-bottom:36px;">Ispričajte nam o svom posebnom događaju i mi ćemo osmisliti nezaboravno iskustvo za vas i vaše goste.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="navigate('contact')">
+            ✦ Pošalji upit
+          </button>
+          <a class="btn btn-outline" href="tel:+385993254488">
+            📞 Nazovite nas
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand"><div class="footer-logo">Aurora Bistro</div><span class="footer-logo-sub">& Grill — Osijek</span><p class="footer-brand-text">Premium restoran u Osijeku za sve prigode.</p><div class="social-row"><a class="social-btn" href="#">📷</a><a class="social-btn" href="#">f</a><a class="social-btn" href="#">🍽</a></div></div>
+          <div><div class="footer-col-title">Stranice</div><ul class="footer-links"><li><a onclick="navigate('home')">Početna</a></li><li><a onclick="navigate('about')">O nama</a></li><li><a onclick="navigate('menu')">Jelovnik</a></li><li><a onclick="navigate('gallery')">Galerija</a></li><li><a onclick="navigate('reservations')">Rezervacije</a></li><li><a onclick="navigate('events')">Događanja</a></li><li><a onclick="navigate('contact')">Kontakt</a></li></ul></div>
+          <div><div class="footer-col-title">Kontakt</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ul. kralja Tomislava 24, Osijek</span></div><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div></div>
+          <div><div class="footer-col-title">Radno vrijeme</div><div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10–23h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10–00h</span></div><div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11–22h</span></div></div>
+        </div>
+        <div class="footer-bottom"><span class="footer-copyright">© 2025 Aurora Bistro & Grill.</span><div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti</a></div></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== CONTACT PAGE ===================== -->
+  <div class="page" id="page-contact">
+    <div class="contact-hero">
+      <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;">
+        <span class="section-eyebrow">— Kontaktirajte nas</span>
+        <h1 class="page-hero-title" style="color:var(--white);margin-top:14px;">Tu smo<br><em>za vas</em></h1>
+        <p class="page-hero-sub">Slobodno nam se javite s pitanjima, upitima za rezervaciju ili posebnim zahtjevima.</p>
+      </div>
+    </div>
+    <section class="contact-section">
+      <div class="contact-inner">
+        <div>
+          <div class="contact-info-block reveal-left">
+            <div class="contact-info-label">Adresa</div>
+            <div class="contact-info-value">
+              Ulica kralja Tomislava 24<br>
+              31000 Osijek, Hrvatska
+            </div>
+            <div class="map-placeholder">
+              <span class="map-pin">📍</span>
+              <span class="map-address">Ulica kralja Tomislava 24, Osijek</span>
+            </div>
+          </div>
+          <div class="contact-info-block reveal-left stagger-2">
+            <div class="contact-info-label">Telefon & E-mail</div>
+            <div class="contact-info-value">
+              <a href="tel:+385993254488">+385 99 325 4488</a><br>
+              <a href="mailto:info@aurorabistro.hr">info@aurorabistro.hr</a>
+            </div>
+          </div>
+          <div class="contact-info-block reveal-left stagger-3">
+            <div class="contact-info-label">Radno vrijeme</div>
+            <div class="hours-grid">
+              <div class="hours-row"><span class="hours-day">Ponedjeljak – Četvrtak</span><span class="hours-time">10:00 – 23:00</span></div>
+              <div class="hours-row"><span class="hours-day">Petak – Subota</span><span class="hours-time">10:00 – 00:00</span></div>
+              <div class="hours-row"><span class="hours-day">Nedjelja</span><span class="hours-time">11:00 – 22:00</span></div>
+            </div>
+          </div>
+          <div class="contact-info-block reveal-left stagger-4">
+            <div class="contact-info-label">Pratite nas</div>
+            <div class="social-row">
+              <a class="social-btn" href="#" title="Instagram">📷</a>
+              <a class="social-btn" href="#" title="Facebook">f</a>
+              <a class="social-btn" href="#" title="TripAdvisor">🍽</a>
+            </div>
+          </div>
+          <div class="reveal-left stagger-5">
+            <button class="btn btn-primary" onclick="navigate('reservations')" style="margin-top:8px;">
+              ✦ Rezerviraj stol
+            </button>
+          </div>
+        </div>
+        <div class="contact-form-card reveal-right">
+          <div class="form-title" style="font-size:1.8rem;">Pišite nam</div>
+          <p class="form-sub" style="margin-bottom:32px;">Imate pitanje ili poseban zahtjev? Javite nam se i odgovorit ćemo u najkraćem roku.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Ime i prezime *</label>
+              <input class="form-control" type="text" placeholder="Vaše ime" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">E-mail *</label>
+              <input class="form-control" type="email" placeholder="vasa@email.com" />
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Tema poruke</label>
+              <select class="form-control">
+                <option>Rezervacija</option>
+                <option>Posebno događanje</option>
+                <option>Pitanje o jelovniku</option>
+                <option>Poslovni upit</option>
+                <option>Ostalo</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Poruka *</label>
+              <textarea class="form-control" style="min-height:130px;" placeholder="Vaša poruka..."></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary form-submit" onclick="contactSubmit()">
+            ✦ Pošalji poruku
+          </button>
+          <div class="form-success" id="contactSuccess">
+            <span class="success-icon">✅</span>
+            <div class="success-title">Poruka primljena!</div>
+            <p class="success-text">Hvala na poruci. Odgovorit ćemo vam najkasnije unutar 24 sata.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand"><div class="footer-logo">Aurora Bistro</div><span class="footer-logo-sub">& Grill — Osijek</span><p class="footer-brand-text">Moderan premium restoran u srcu Osijeka za sve prigode.</p><div class="social-row"><a class="social-btn" href="#">📷</a><a class="social-btn" href="#">f</a><a class="social-btn" href="#">🍽</a></div></div>
+          <div><div class="footer-col-title">Stranice</div><ul class="footer-links"><li><a onclick="navigate('home')">Početna</a></li><li><a onclick="navigate('about')">O nama</a></li><li><a onclick="navigate('menu')">Jelovnik</a></li><li><a onclick="navigate('gallery')">Galerija</a></li><li><a onclick="navigate('reservations')">Rezervacije</a></li><li><a onclick="navigate('events')">Događanja</a></li><li><a onclick="navigate('contact')">Kontakt</a></li></ul></div>
+          <div><div class="footer-col-title">Kontakt</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span class="footer-contact-text">Ul. kralja Tomislava 24, 31000 Osijek</span></div><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span class="footer-contact-text">+385 99 325 4488</span></div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span class="footer-contact-text">info@aurorabistro.hr</span></div></div>
+          <div><div class="footer-col-title">Radno vrijeme</div><div class="footer-hours-row"><span class="footer-hours-day">Pon – Čet</span><span class="footer-hours-time">10:00 – 23:00</span></div><div class="footer-hours-row"><span class="footer-hours-day">Pet – Sub</span><span class="footer-hours-time">10:00 – 00:00</span></div><div class="footer-hours-row"><span class="footer-hours-day">Nedjelja</span><span class="footer-hours-time">11:00 – 22:00</span></div></div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copyright">© 2025 Aurora Bistro & Grill. Sva prava pridržana.</span>
+          <div class="footer-bottom-links"><a href="#">Privatnost</a><a href="#">Uvjeti korištenja</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // NAVIGATION
+    function navigate(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+        a.classList.toggle('active', a.dataset.page === page);
+      });
+
+      // Trigger reveals on new page
+      setTimeout(triggerReveals, 100);
+    }
+
+    // HAMBURGER
+    function toggleMobile() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    function closeMobile() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    // STICKY NAV
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+        navbar.classList.remove('light');
+      } else {
+        navbar.classList.remove('scrolled');
+        navbar.classList.add('light');
+      }
+    });
+
+    // SCROLL REVEALS
+    function triggerReveals() {
+      const reveals = document.querySelectorAll('.page.active .reveal, .page.active .reveal-left, .page.active .reveal-right');
+      reveals.forEach((el, i) => {
+        setTimeout(() => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.92) {
+            el.classList.add('visible');
+          }
+        }, i * 40);
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const reveals = document.querySelectorAll('.page.active .reveal, .page.active .reveal-left, .page.active .reveal-right');
+      reveals.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.9) {
+          el.classList.add('visible');
+        }
+      });
+    });
+
+    // Initial trigger
+    setTimeout(triggerReveals, 300);
+
+    // MENU TABS
+    document.getElementById('menuTabs').addEventListener('click', (e) => {
+      if (!e.target.classList.contains('menu-tab')) return;
+      const cat = e.target.dataset.cat;
+      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+      e.target.classList.add('active');
+      document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+      document.getElementById('cat-' + cat).classList.add('active');
+    });
+
+    // LIGHTBOX
+    function openLightbox(el, label) {
+      const lb = document.getElementById('lightbox');
+      const lbc = document.getElementById('lightboxContent');
+      const bg = el.querySelector('.gallery-item-bg').cloneNode(true);
+      const emoji = el.querySelector('.gallery-emoji') ? el.querySelector('.gallery-emoji').textContent : '✨';
+
+      lbc.innerHTML = `
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;background:${getComputedStyle(el.querySelector('.gallery-item-bg')).background};">
+          ${emoji}
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);color:white;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;">${label}</div>
+      `;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // RESERVATION FORM
+    function submitForm() {
+      document.getElementById('formMain').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }
+
+    function resetForm() {
+      document.getElementById('formMain').style.display = 'block';
+      document.getElementById('formSuccess').classList.remove('show');
+    }
+
+    // CONTACT FORM
+    function contactSubmit() {
+      const btn = event.target;
+      btn.textContent = 'Šalje se...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.style.display = 'none';
+        document.getElementById('contactSuccess').classList.add('show');
+      }, 800);
+    }
+  </script>
+</body>
+</html>
